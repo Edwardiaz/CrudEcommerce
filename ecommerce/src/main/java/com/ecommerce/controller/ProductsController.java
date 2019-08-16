@@ -26,7 +26,7 @@ public class ProductsController {
 	public String saveProducts
 	(@RequestParam(value = "productCode") char productCode,
 	 @RequestParam(value = "sku") String sku,
-	 @RequestParam(value = "nameProduct") String nameProduct,
+	 @RequestParam(value = "nameProducts") String nameProducts,
 	 @RequestParam(value = "description") String description,
 	 @RequestParam(value = "colour") String colour,
 	 @RequestParam(value = "updateDate") String updateDate,
@@ -35,18 +35,18 @@ public class ProductsController {
 	 @RequestParam(value = "taxes") double taxes,
 	 @RequestParam(value = "additionalShippingCost") double additionalShippingCost,
 	 @RequestParam(value = "wholeSalePrice") double wholeSalePrice,
-	 @RequestParam(value = "productDeliveryDate") String productsDeliveryDate,
+	 @RequestParam(value = "productDeliveryDate") String productDeliveryDate,
 	 @RequestParam(value = "width") float width,
-	 @RequestParam(value = "heidth") float heidth,
+	 @RequestParam(value = "height") float height,
 	 @RequestParam(value = "depth") float depth,
-	 @RequestParam(value = "weigth") float weigth,
+	 @RequestParam(value = "weight") float weight,
 	 @RequestParam(value = "idOrders") int idOrders) {
 		ProductsDao proDao = new ProductsDao();
 		Products product = new Products();
 		
 		product.setProductCode(productCode);
 		product.setSku(sku);
-		product.setNameProduct(nameProduct);
+		product.setNameProducts(nameProducts);
 		product.setDescription(description);
 		product.setColour(colour);
 		product.setUpdateDate(updateDate);
@@ -55,24 +55,24 @@ public class ProductsController {
 		product.setTaxes(taxes);
 		product.setAdditionalShippingCost(additionalShippingCost);
 		product.setWholeSalePrice(wholeSalePrice);
-		product.setProductDeliveryDate(productsDeliveryDate);
+		product.setProductDeliveryDate(productDeliveryDate);
 		product.setWidth(width);
-		product.setHeigth(heidth);
+		product.setHeight(height);
 		product.setDepth(depth);
-		product.setWeigth(weigth);
+		product.setWeight(weight);
 		product.setIdOrders(idOrders);
 		proDao.saveProduct(product);
 		
 		return "index";
 	}
 	
-	@RequestMapping("/listPro")
+	@RequestMapping(value = "/listP")
 	public String findAllProducts(Model m) {
 		ProductsDao proDao = new ProductsDao();
 		List<Products> listPro = proDao.findAllProducts();
 		m.addAttribute("listPro", listPro);
 		
-		return "ShowProducts";
+		return "showProducts";
 	}
 	
 	@RequestMapping(value = "/deletepro/{idProducts}", method = RequestMethod.GET)
@@ -85,7 +85,7 @@ public class ProductsController {
 		return "showProducts";
 	}
 	
-	@RequestMapping(value = "updateProduct", method = RequestMethod.POST)
+	@RequestMapping(value = "updateProduct", method = RequestMethod.PUT)
 	public String updateProduct(@PathVariable("idProducts") int id, Model m) {
 		ProductsDao proDao = new ProductsDao();
 		proDao.updateProduct(id);

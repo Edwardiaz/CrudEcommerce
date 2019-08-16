@@ -12,15 +12,16 @@ import com.ecommerce.dao.CategoryDao;
 import com.ecommerce.dao.ProductsDao;
 import com.ecommerce.entity.Category;
 
+
 public class CategoryController {
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String handler(Model m) {
-		
-		return "index";
-	}
+//	@RequestMapping(value = "", method = RequestMethod.GET)
+//	public String handler(Model m) {
+//		
+//		return "index";
+//	}
 	
-	@RequestMapping(value = "/products", method = RequestMethod.POST)
+	@RequestMapping(value = "/category", method = RequestMethod.POST)
 	public String saveProducts
 	(@RequestParam(value = "nameCategory") String nameCategory,
 	 @RequestParam(value = "description") String description,
@@ -46,7 +47,7 @@ public class CategoryController {
 	}
 	
 	@RequestMapping(value = "/deletecat/{idCategory}", method = RequestMethod.GET)
-	public String deleteProduct(@PathVariable("idProducts") int id, Model m) {
+	public String deleteProduct(@PathVariable("idCategory") int id, Model m) {
 		CategoryDao catDao = new CategoryDao();
 		catDao.deleteCategory(id);
 		List<Category> listCat = catDao.findAllCategory();
@@ -55,8 +56,8 @@ public class CategoryController {
 		return "showCategory";
 	}
 	
-	@RequestMapping(value = "updateProduct", method = RequestMethod.POST)
-	public String updateProduct(@PathVariable("idProducts") int id, Model m) {
+	@RequestMapping(value = "updatecategory", method = RequestMethod.PUT)
+	public String updateCategory(@PathVariable("idCategory") int id, Model m) {
 		CategoryDao catDao = new CategoryDao();
 		catDao.updateCategory(id);
 		List<Category> listCat = catDao.findAllCategory();
@@ -64,8 +65,8 @@ public class CategoryController {
 		return "showCategory";
 	}
 	
-	@RequestMapping(value="/updatePro/{idProducts}", method = RequestMethod.GET)
-	public String findByIdProducto(@PathVariable("idProducts") int id, Model m){
+	@RequestMapping(value="/updatePro/{idCategory}", method = RequestMethod.GET)
+	public String findByIdProducto(@PathVariable("idCategory") int id, Model m){
 		ProductsDao proDao = new ProductsDao();
 		proDao.findByIdProducts(id);
 		return "updateProducto";

@@ -3,7 +3,6 @@ package com.ecommerce.entity;
 import java.io.Serializable;
 //import java.util.Date;
 import java.util.Set;
-
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +18,7 @@ import javax.persistence.Table;
 import com.ecommerce.entity.Products;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "products")
 public class Products implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -28,29 +27,44 @@ public class Products implements Serializable {
 	@Basic(optional = false)
 	@Column(name = "idProducts")
 	private Integer idProducts;
+	@Column(name = "productCode")
 	private char productCode;
+	@Column(name = "sku")
 	private String sku;
-	private String nameProduct;
+	@Column(name = "nameProducts")
+	private String nameProducts;
+	@Column(name = "description")
 	private String description;
+	@Column(name = "colour")
 	private String colour;
 //	@Temporal(TemporalType.DATE)
 	@Column(name = "updateDate")
 	private String updateDate;
+	@Column(name = "price")
 	private double price;
+	@Column(name = "quantity")
 	private int quantity;
+	@Column(name = "taxes")
 	private double taxes;
+	@Column(name = "additionalShippingCost")
 	private double additionalShippingCost;
 	@Column(name = "wholeSalePrice")
 	private double wholeSalePrice;
+	@Column(name = "productDeliveryDate")
 	private String productDeliveryDate;
+	@Column(name = "width")
 	private float width;
-	private float heigth;
+	@Column(name = "height")
+	private float height;
+	@Column(name = "depth")
 	private float depth;
-	private float weigth;
+	@Column(name = "weight")
+	private float weight;
+	@Column(name = "idOrders")
 	private int idOrders;
     
-    @OneToMany(mappedBy = "Products", fetch = FetchType.EAGER)
-    private Set<Category> categorySet;
+    @OneToMany(mappedBy = "products", fetch = FetchType.EAGER)
+    private Set<ProductsCategory> productsCategorySet;
 
 	public Products() {
 	}
@@ -83,12 +97,12 @@ public class Products implements Serializable {
 		this.sku = sku;
 	}
 
-	public String getNameProduct() {
-		return nameProduct;
+	public String getNameProducts() {
+		return nameProducts;
 	}
 
-	public void setNameProduct(String nameProduct) {
-		this.nameProduct = nameProduct;
+	public void setNameProducts(String nameProducts) {
+		this.nameProducts = nameProducts;
 	}
 
 	public String getDescription() {
@@ -171,12 +185,12 @@ public class Products implements Serializable {
 		this.width = width;
 	}
 
-	public float getHeigth() {
-		return heigth;
+	public float getHeight() {
+		return height;
 	}
 
-	public void setHeigth(float heigth) {
-		this.heigth = heigth;
+	public void setHeight(float height) {
+		this.height = height;
 	}
 
 	public float getDepth() {
@@ -187,12 +201,12 @@ public class Products implements Serializable {
 		this.depth = depth;
 	}
 
-	public float getWeigth() {
-		return weigth;
+	public float getWeight() {
+		return weight;
 	}
 
-	public void setWeigth(float weigth) {
-		this.weigth = weigth;
+	public void setWeight(float weight) {
+		this.weight = weight;
 	}
 
 	public int getIdOrders() {
@@ -204,12 +218,12 @@ public class Products implements Serializable {
 	}
 	
 
-	public Set<Category> getCategorySet() {
-		return categorySet;
+	public Set<ProductsCategory> getProductsCategorySet() {
+		return productsCategorySet;
 	}
 
-	public void setCategorySet(Set<Category> categorySet) {
-		this.categorySet = categorySet;
+	public void setProductsCategorySet(Set<ProductsCategory> productsCategorySet) {
+		this.productsCategorySet = productsCategorySet;
 	}
 
 	@Override

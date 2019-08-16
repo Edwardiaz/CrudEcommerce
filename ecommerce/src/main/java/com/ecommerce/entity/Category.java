@@ -22,11 +22,14 @@ public class Category implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idCategory")
 	private Integer idCategory;
+	@Column(name = "nameCategory")
 	private String nameCategory;
+	@Column(name = "description")
 	private String description;
+	@Column(name = "idCategoryPadre")
 	private int idCategoryPadre;
 	
-	@OneToMany(mappedBy = "Category", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     private Set<ProductsCategory> productsCategorySet;
 	
 	public Category(){

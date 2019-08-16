@@ -38,7 +38,7 @@ public class ProductsCategoryDao {
 	}
 	
 	/*metodo por id*/
-	public ProductsCategory findByIdProCat(){
+	public ProductsCategory findByIdProCat(int id){
 		try(Session session = HibernateUtil.getSessionFactory().openSession()) { 
 			return session.createQuery("from ProductsCategory", ProductsCategory.class).getSingleResult();
 		} catch (Exception e) {

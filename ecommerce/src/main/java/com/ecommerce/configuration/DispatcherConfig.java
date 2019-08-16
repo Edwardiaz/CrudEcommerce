@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.demo"}) // Scans the following packages for classes with @Controller annotations
+@ComponentScan(basePackages = {"com.ecommerce.controller"}) // Scans the following packages for classes with @Controller annotations
 public class DispatcherConfig implements WebMvcConfigurer {
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {

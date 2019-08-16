@@ -2,6 +2,7 @@ package com.ecommerce.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,12 +20,13 @@ public class ProductsCategory implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
 	@Column(name = "idProductCategory")
 	private Integer idProductsCategory;
 	@Column(name = "idProducts")
-	private int idProducts;
+	private int idPro;
 	@Column(name = "idCategory")
-	private int idCategory;
+	private int idCat;
 	
 	@JoinColumn(name = "idCategory", insertable = false, updatable = false)
 	@ManyToOne
@@ -51,19 +53,19 @@ public class ProductsCategory implements Serializable{
 	}
 
 	public int getIdProducts() {
-		return idProducts;
+		return idPro;
 	}
 
 	public void setIdProducts(int idProducts) {
-		this.idProducts = idProducts;
+		this.idPro = idProducts;
 	}
 
 	public int getIdCategory() {
-		return idCategory;
+		return idCat;
 	}
 
 	public void setIdCategory(int idCategory) {
-		this.idCategory = idCategory;
+		this.idCat = idCategory;
 	}
 	
 	
