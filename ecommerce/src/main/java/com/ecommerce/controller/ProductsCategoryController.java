@@ -2,6 +2,7 @@ package com.ecommerce.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 //import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.ecommerce.dao.ProductsCategoryDao;
 import com.ecommerce.entity.ProductsCategory;
 
-
-
-
+@Controller
 public class ProductsCategoryController {
 
 //	@RequestMapping(value = "", method = RequestMethod.GET)
