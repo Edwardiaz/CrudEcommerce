@@ -21,7 +21,7 @@
 	<h3>
 		<a href="">Consultar las Categorias</a>
 	</h3>
-	<table style="border:2px solid black; border-left: 2px solid black; border-top: 2px solid black; ">
+	<table border="1" width="100%" cellpadding="10">
 	<thead >
 		<tr>
 			<th>ID</th>
