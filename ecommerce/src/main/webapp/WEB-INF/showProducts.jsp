@@ -67,7 +67,7 @@
 				<td>${ver.weight}</td>
 				<td>${ver.idOrders}</td>
 				<td>
-				<a href="updatepro/${ver.idProducts}">Edit</a> 
+				<a href="find/${ver.idProducts}">Edit</a> 
 				<br>
 				<a href="deletepro/${ver.idProducts}">Delete</a>
 				</td>
@@ -75,6 +75,7 @@
 		</tbody>
 		</c:forEach>
 	</table>
-	<br />
+	<dialog >
+	</dialog>
 </body>
 </html>

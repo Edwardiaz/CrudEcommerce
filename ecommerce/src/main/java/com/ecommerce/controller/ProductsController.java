@@ -94,11 +94,11 @@ public class ProductsController {
 		return "showProducts";
 	}
 	
-	@RequestMapping(value="/updatePro/{idProducts}", method = RequestMethod.GET)
+	@RequestMapping(value="/find/{idProducts}", method = RequestMethod.GET)
 	public String findByIdProducto(@PathVariable("idProducts") int id, Model m){
 		ProductsDao proDao = new ProductsDao();
 		proDao.findByIdProducts(id);
-		return "updateProducto";
+		return "updatePro";
 	}
 	
 }
