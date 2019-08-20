@@ -38,13 +38,13 @@ public class CategoryController {
 		return "index2";
 	}
 	
-	@RequestMapping("/listCat")
+	@RequestMapping("/listC")
 	public String findAllCategories(Model m) {
 		CategoryDao catDao = new CategoryDao();
 		List<Category> listCat = catDao.findAllCategory();
 		m.addAttribute("listCat", listCat);
 		
-		return "ShowCategory";
+		return "ShowCat";
 	}
 	
 	@RequestMapping(value = "/deletecat/{idCategory}", method = RequestMethod.GET)

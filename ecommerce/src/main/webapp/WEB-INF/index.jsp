@@ -78,5 +78,7 @@
 		</table>
 	</form>
 	<a href="listP">Consultar lista de productos</a>
+	<br>
+	<a href="listC">Consultar lista de Categorias</a>
 </body>
 </html>

@@ -19,7 +19,7 @@
 		<a href="http://localhost:8090/ecommerce/">Vista principal</a>
 	</h3>
 	<h3>
-		<a href="">Consultar las Categorias</a>
+		<a href="listC">Consultar las Categorias</a>
 	</h3>
 	<table border="1" width="100%" cellpadding="10">
 	<thead >
